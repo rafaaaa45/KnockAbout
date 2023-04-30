@@ -1,7 +1,7 @@
 import math
 
 from games.tictactoe.player import TictactoePlayer
-from games.tictactoe.result import TictactoeResult
+from games.tictactoe.result import KnockaboutResult
 from games.tictactoe.state import TictactoeState
 from games.state import State
 
@@ -94,9 +94,9 @@ class MinimaxTictactoePlayer(TictactoePlayer):
         # first we check if we are in a terminal node (victory, draw or loose)
         if state.is_finished():
             return {
-                TictactoeResult.WIN: 40,
-                TictactoeResult.LOOSE: -40,
-                TictactoeResult.DRAW: 0
+                KnockaboutResult.WIN: 40,
+                KnockaboutResult.LOOSE: -40,
+                KnockaboutResult.DRAW: 0
             }[state.get_result(self.get_current_pos())]
 
         # if we reached the maximum depth, we will return the value of the heuristic

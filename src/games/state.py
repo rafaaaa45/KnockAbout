@@ -15,7 +15,7 @@ class State(ABC):
     :param action: action that we want to validate
     :return bool:
     """
-    @abstractmethod
+    
     def validate_action(self, action) -> bool:
         pass
 

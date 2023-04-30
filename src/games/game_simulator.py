@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-
 from games.player import Player
 from games.state import State
 

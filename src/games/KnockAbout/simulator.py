@@ -1,11 +1,11 @@
-from games.tictactoe.player import TictactoePlayer
-from games.tictactoe.state import TictactoeState
+from games.KnockAbout.player import TictactoePlayer
+from games.KnockAbout.state import TictactoeState
 from games.game_simulator import GameSimulator
 
 
 class TictactoeSimulator(GameSimulator):
 
-    def __init__(self, player1: TictactoePlayer, player2: TictactoePlayer, num_rows: int = 3, num_cols: int = 3):
+    def __init__(self, player1: TictactoePlayer, player2: TictactoePlayer, num_rows: int = 9, num_cols: int = 10):
         super(TictactoeSimulator, self).__init__([player1, player2])
         """
         the number of rows and cols from the connect4 grid

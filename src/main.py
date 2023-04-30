@@ -1,21 +1,6 @@
-from games.connect4.players.greedy import GreedyConnect4Player
-from games.connect4.players.minimax import MinimaxConnect4Player
-from games.connect4.players.random import RandomConnect4Player
-from games.connect4.simulator import Connect4Simulator
 from games.game_simulator import GameSimulator
-from games.poker.players.always_bet import AlwaysBetKuhnPokerPlayer
-from games.poker.players.always_bet_king import AlwaysBetKingKuhnPokerPlayer
-from games.poker.players.always_pass import AlwaysPassKuhnPokerPlayer
-from games.poker.players.cfr import CFRKuhnPokerPlayer
-from games.poker.players.random import RandomKuhnPokerPlayer
-from games.poker.simulator import KuhnPokerSimulator
-from games.tictactoe.simulator import TictactoeSimulator
-from games.tictactoe.players.human import HumanTictactoePlayer
-from games.tictactoe.players.random import RandomTictactoePlayer
-from games.tictactoe.players.greedy import GreedyTictactoePlayer
-from games.tictactoe.players.minimax import MinimaxTictactoePlayer
-
-
+from games.KnockAbout.simulator import TictactoeSimulator
+from games.KnockAbout.players.human import HumanTictactoePlayer
 
 
 def run_simulation(desc: str, simulator: GameSimulator, iterations: int):
@@ -32,124 +17,17 @@ def run_simulation(desc: str, simulator: GameSimulator, iterations: int):
 def main():
     print("ESTG IA Games Simulator")
 
-    num_iterations = 20
+    num_iterations = 1
 
-    tictactoe = [
-        # {
-        #     "name": "Tictactoe - Human VS Random",
-        #     "player1": HumanTictactoePlayer("Human"),
-        #     "player2": RandomTictactoePlayer("Random")
-        # },
+    knockabout = [
         {
-            "name": "Tictactoe - Random VS Random",
-            "player1": RandomTictactoePlayer("Random 1"),
-            "player2": RandomTictactoePlayer("Random 2")
-        },
-        {
-            "name": "Tictactoe - Greedy VS Random",
-            "player1": GreedyTictactoePlayer("Greedy"),
-            "player2": RandomTictactoePlayer("Random")
-        },
-        {
-            "name": "Tictactoe - Minimax VS Random",
-            "player1": MinimaxTictactoePlayer("Minimax"),
-            "player2": RandomTictactoePlayer("Random")
-        },
-        {
-            "name": "Tictactoe - Minimax VS Greedy",
-            "player1": MinimaxTictactoePlayer("Minimax"),
-            "player2": GreedyTictactoePlayer("Greedy")
+            "name": "KnockAbout - Human VS Random",
+            "player1": HumanTictactoePlayer("Human"),
+            "player2": HumanTictactoePlayer("Human")
         }
     ]
 
-    # c4_simulations = [
-    #     # {
-    #     #    "name": "Connect4 - Human VS Random",
-    #     #    "player1": HumanConnect4Player("Human"),
-    #     #    "player2": RandomConnect4Player("Random")
-    #     # },
-    #     {
-    #         "name": "Connect4 - Random VS Random",
-    #         "player1": RandomConnect4Player("Random 1"),
-    #         "player2": RandomConnect4Player("Random 2")
-    #     },
-    #     {
-    #         "name": "Connect4 - Greedy VS Random",
-    #         "player1": GreedyConnect4Player("Greedy"),
-    #         "player2": RandomConnect4Player("Random")
-    #     },
-    #     {
-    #         "name": "Minimax VS Random",
-    #         "player1": MinimaxConnect4Player("Minimax"),
-    #         "player2": RandomConnect4Player("Random")
-    #     },
-    #     {
-    #         "name": "Minimax VS Greedy",
-    #         "player1": MinimaxConnect4Player("Minimax"),
-    #         "player2": GreedyConnect4Player("Greedy")
-    #     }
-    # ]
-
-    # poker_simulations = [
-    #     # {
-    #     #    "name": "Connect4 - Human VS Random",
-    #     #    "player1": HumanKuhnPokerPlayer("Human"),
-    #     #    "player2": RandomKuhnPokerPlayer("Random")
-    #     # },
-    #     {
-    #         "name": "Kuhn Poker - Random VS Random",
-    #         "player1": RandomKuhnPokerPlayer("Random 1"),
-    #         "player2": RandomKuhnPokerPlayer("Random 2")
-    #     },
-    #     {
-    #         "name": "Kuhn Poker - AlwaysBet VS Random",
-    #         "player1": AlwaysBetKuhnPokerPlayer("AlwaysBet"),
-    #         "player2": RandomKuhnPokerPlayer("Random")
-    #     },
-    #     {
-    #         "name": "Kuhn Poker - AlwaysPass VS Random",
-    #         "player1": AlwaysPassKuhnPokerPlayer("AlwaysPass"),
-    #         "player2": RandomKuhnPokerPlayer("Random")
-    #     },
-    #     {
-    #         "name": "Kuhn Poker - AlwaysBet VS AlwaysPass",
-    #         "player1": AlwaysBetKuhnPokerPlayer("AlwaysBet"),
-    #         "player2": AlwaysPassKuhnPokerPlayer("AlwaysPass")
-    #     },
-    #     {
-    #         "name": "Kuhn Poker - AlwaysBet VS AlwaysBetKing",
-    #         "player1": AlwaysBetKuhnPokerPlayer("AlwaysBet"),
-    #         "player2": AlwaysBetKingKuhnPokerPlayer("AlwaysBetKing")
-    #     },
-    #     {
-    #         "name": "Kuhn Poker - CFR VS Random",
-    #         "player1": CFRKuhnPokerPlayer("CFR"),
-    #         "player2": RandomKuhnPokerPlayer("Random")
-    #     },
-    #     {
-    #         "name": "Kuhn Poker - CFR VS AlwaysPass",
-    #         "player1": CFRKuhnPokerPlayer("CFR"),
-    #         "player2": AlwaysPassKuhnPokerPlayer("AlwaysPass")
-    #     },
-    #     {
-    #         "name": "Kuhn Poker - CFR VS AlwaysBet",
-    #         "player1": CFRKuhnPokerPlayer("CFR"),
-    #         "player2": AlwaysBetKuhnPokerPlayer("AlwaysBet")
-    #     },
-    #     {
-    #         "name": "Kuhn Poker - CFR VS AlwaysBetKing",
-    #         "player1": CFRKuhnPokerPlayer("CFR"),
-    #         "player2": AlwaysBetKingKuhnPokerPlayer("AlwaysBetKing")
-    #     }
-    # ]
-
-    # for sim in c4_simulations:
-    #     run_simulation(sim["name"], Connect4Simulator(sim["player1"], sim["player2"]), num_iterations)
-
-    # for sim in poker_simulations:
-    #     run_simulation(sim["name"], KuhnPokerSimulator(sim["player1"], sim["player2"]), num_iterations)
-
-    for sim in tictactoe:
+    for sim in knockabout:
         run_simulation(sim["name"], TictactoeSimulator(sim["player1"], sim["player2"]), num_iterations)
 
 
